@@ -1,0 +1,9 @@
+
+.checkbox {
+  width: 10em;
+  height: 10em;
+  border: 1px solid gray;
+}
+.checkbox--done {
+  background-color: pink;
+}
