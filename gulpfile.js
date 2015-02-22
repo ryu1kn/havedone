@@ -2,15 +2,20 @@
 var gulp  = require('gulp'),
     shell = require('gulp-shell');
 
-var path = {
-        js: 'index.js'
-    }
+var paths = {
+        js: {
+            inMain: 'src/app.js',
+            inAll : 'src/**/*.js',
+            out   : 'public/bundle.js'
+        }
+    };
 
 gulp.task('watch', function() {
-    gulp.watch(path.js, ['compile']);
+    gulp.watch(paths.js.inAll, ['compile']);
 });
 
-gulp.task('compile', shell.task('browserify index.js -o bundle.js'));
+gulp.task('compile', shell.task([
+    'browserify', paths.js.inMain, '-o', paths.js.out
+].join(' ')));
 
 gulp.task('default', ['compile', 'watch']);
-

@@ -8,11 +8,11 @@
     "type": "git",
     "url": "https://github.com/ryu1kn/havedone.git"
   },
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build",
     "build": "gulp compile",
-    "watch": "gulp"
+    "watch": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
   "devDependencies": {
